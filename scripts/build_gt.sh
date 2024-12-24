@@ -22,7 +22,7 @@ PKG_CONFIG_PATH=${CHROOT}/usr/lib/aarch64-linux-gnu/pkgconfig \
         --prefix=/usr \
         --with-sysroot=${CHROOT}
 )
-make -C build DESTDIR=$(pwd)/dist CFLAGS="--sysroot=${CHROOT}" install
+make -C build DESTDIR=$(pwd)/dist CFLAGS="--sysroot=${CHROOT} -I${CHROOT}/usr/include" LDFLAGS="--sysroot=${CHROOT} -L${CHROOT}/usr/lib/aarch64-linux-gnu" install
 make -C build CFLAGS="--sysroot=${CHROOT}" install
 
 rm -rf build/*

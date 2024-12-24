@@ -36,5 +36,5 @@ rm -rf /var/lib/apt/lists/*
 
 passwd -d root
 
-echo user:1::::/home/user:/bin/bash | newusers
+echo user:1::::/home/user:/bin/bash | /sbin/newusers
 echo 'user ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/user
